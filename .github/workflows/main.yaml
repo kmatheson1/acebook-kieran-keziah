@@ -41,7 +41,7 @@ jobs:
           zip -r application_package.zip .
 
       - name: Upload Artifact
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with:
           name: deployment-artifact
           path: application_package.zip
@@ -58,7 +58,7 @@ jobs:
           ls -al
       
       - name: Download Artifact
-        uses: actions/download-artifact@v2
+        uses: actions/download-artifact@v3
         with:
           name: deployment-artifact
 
