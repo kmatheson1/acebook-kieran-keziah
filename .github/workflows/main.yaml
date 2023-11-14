@@ -6,7 +6,7 @@ on:
       - main
 
 jobs:
-  test:
+  build:
     runs-on: ubuntu-latest
 
     steps:
@@ -30,3 +30,15 @@ jobs:
         uses: cypress-io/github-action@v6
         with:
             start: npm run start:test
+
+      - name: Package Application
+        run: |
+          mkdir deployment
+          # Copy everything except files and directories listed in .gitignore
+          rsync -av --exclude-from=.gitignore --exclude=.git --exclude=deployment . deployment/  
+          cd deployment
+          npm install
+          zip -r application_package.zip
+
+
+
