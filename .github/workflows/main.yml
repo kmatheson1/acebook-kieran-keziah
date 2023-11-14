@@ -26,5 +26,8 @@ jobs:
         with:
           mongodb-version: 5.0
 
+      - name: Cypress run
+        uses: cypress-io/github-action@v6
+
       - name: Run Tests
         run: npm test
