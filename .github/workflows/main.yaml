@@ -79,3 +79,10 @@ jobs:
         run: |
           aws s3 cp application_package.zip s3://kieran-keziah-acebook
 
+      
+      - name: Deploy to CodeDeploy
+        run: |
+          aws deploy create-deployment \
+            --application-name kk-acebook\
+            --deployment-group kkAcebookDeploymentServers \
+            --s3-location bucket=kieran-keziah-acebook,key=application_package.zip,bundleType=zip
