@@ -44,9 +44,10 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: deployment-artifact
-          path: application_package.zip
+          path: deployment/application_package.zip
 
   deploy:
+    needs: build
     runs-on: ubuntu-latest
 
     steps:
