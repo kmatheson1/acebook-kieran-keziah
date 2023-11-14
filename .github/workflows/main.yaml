@@ -38,7 +38,7 @@ jobs:
           rsync -av --exclude-from=.gitignore --exclude=.git --exclude=deployment . deployment/  
           cd deployment
           npm install
-          zip -r application_package.zip
+          zip -r application_package.zip .
 
 
 
