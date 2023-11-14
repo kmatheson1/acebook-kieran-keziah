@@ -7,5 +7,3 @@ export NVM_DIR="$HOME/.nvm"
 source ~/.bashrc
 nvm install 18
 nvm use 18
-
-# COMMENT
