@@ -47,6 +47,11 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v4
 
+      - name: Print Directory Contents
+        run: |
+          ls -al
+          ls -al deployment
+
       - name: Install AWS CLI
         run: |
           sudo apt-get update
