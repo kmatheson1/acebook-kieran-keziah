@@ -40,6 +40,12 @@ jobs:
           npm install
           zip -r application_package.zip .
 
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: deployment-artifact
+          path: application_package.zip
+
   deploy:
     runs-on: ubuntu-latest
 
@@ -51,6 +57,11 @@ jobs:
         run: |
           ls -al
           ls -al deployment
+      
+      - name: Download Artifact
+        uses: actions/download-artifact@v2
+        with:
+          name: deployment-artifact
 
       - name: Install AWS CLI
         run: |
@@ -66,5 +77,5 @@ jobs:
 
       - name: Deploy to S3
         run: |
-          aws s3 cp deployment/application_package.zip s3://kieran-keziah-acebook
+          aws s3 cp application_package.zip s3://kieran-keziah-acebook
 
