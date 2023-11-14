@@ -2,9 +2,15 @@ version: 0.0
 os: linux
 files:
   - source: /
-    destination: /home/ec2-user/
+    destination: /var/acebook
 hooks:
-  BeforeInstall:
-    - location: scripts/install_dependencies.sh
+  ApplicationStop:
+    - location: scripts/application-stop.sh
+      runas: root
+  AfterInstall:
+    - location: scripts/after-install.sh
       timeout: 300
       runas: root
+  ApplicationStart:
+    - location: scripts/application-start.sh
+      runas: ec2-user
