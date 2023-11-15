@@ -24,9 +24,9 @@ if ! command -v mongod &> /dev/null; then
   fi
 
   # Install MongoDB
-  yum install -y mongodb-org
+  sudo yum install -y mongodb-org
 fi
 
 # Start and enable MongoDB
-systemctl start mongod
-systemctl enable mongod
+sudo systemctl start mongod
+sudo systemctl enable mongod
