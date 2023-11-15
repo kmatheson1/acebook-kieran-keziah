@@ -11,3 +11,5 @@ nvm use 18
 cd /var/acebook
 npm install
 npm install -g pm2
+export PATH=$PATH:/opt/node/lib/node_modules/pm2/bin
+source ~/.bashrc
