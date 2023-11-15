@@ -1,5 +1,11 @@
 #!/bin/bash
 
+# Check for sudo
+if [ "$EUID" -ne 0 ]; then
+  echo "Error: Please run this script with sudo."
+  exit 1
+fi
+
 repo_file="/etc/yum.repos.d/mongodb-org-7.0.repo"
 repo_content="[mongodb-org-7.0]
 name=MongoDB Repository
@@ -9,19 +15,18 @@ enabled=1
 gpgkey=https://www.mongodb.org/static/pgp/server-7.0.asc
 "
 
-# Check if the repository file already exists
-if [ -e "$repo_file" ]; then
-  echo "Error: Repository file $repo_file already exists."
-  exit 1
+# Check if MongoDB is already installed
+if ! command -v mongod &> /dev/null; then
+  # Check if the repository file exists
+  if [ ! -e "$repo_file" ]; then
+    # Create the repository file with the specified content
+    echo -e "$repo_content" | tee "$repo_file" > /dev/null
+  fi
+
+  # Install MongoDB
+  yum install -y mongodb-org
 fi
 
-# Create the repository file with the specified content
-echo -e "$repo_content" | sudo tee "$repo_file" > /dev/null
-
-yum install -y mongodb-org
-
-cd /var/acebook
-
+# Start and enable MongoDB
 systemctl start mongod
-
 systemctl enable mongod
