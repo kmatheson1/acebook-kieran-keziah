@@ -2,7 +2,7 @@
 
 # Install Node.js LTS version using NodeSource
 curl -sL https://rpm.nodesource.com/setup_lts.x | sudo bash -
-sudo yum install -y nodejs
+yum install -y nodejs
 
 # Check if npm is installed
 if command -v npm &> /dev/null; then
@@ -22,4 +22,4 @@ cd /var/acebook
 npm install
 
 # Install pm2 globally
-npm install pm2
+npm install -g pm2
