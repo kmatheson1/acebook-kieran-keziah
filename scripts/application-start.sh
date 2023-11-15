@@ -12,4 +12,4 @@ export NVM_DIR
 cd /var/acebook
 
 # Start your application with pm2
-sudo pm2 start app.js --name kk-acebook
+pm2 start app.js --name kk-acebook
