@@ -4,9 +4,9 @@ files:
   - source: /
     destination: /var/acebook
 hooks:
-  # ApplicationStop:
-  #   - location: scripts/application-stop.sh
-  #     runas: root
+  ApplicationStop:
+    - location: scripts/application-stop.sh
+      runas: root
   BeforeInstall:
     - location: scripts/install_dependencies.sh
       timeout: 300

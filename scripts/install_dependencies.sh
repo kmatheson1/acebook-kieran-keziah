@@ -8,3 +8,6 @@ source ~/.bashrc
 nvm install 18
 nvm use 18
 
+cd /var/acebook
+npm install
+npm install -g pm2
