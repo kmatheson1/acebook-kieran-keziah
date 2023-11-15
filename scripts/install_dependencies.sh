@@ -1,7 +1,5 @@
 #!/bin/bash
 
-cd /var/acebook
-
 # Install NVM
 curl https://raw.githubusercontent.com/creationix/nvm/master/install.sh | bash
 
