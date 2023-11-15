@@ -15,11 +15,11 @@ fi
 # Navigate to your app directory
 cd /var/acebook
 
-# Change ownership of the directory
-sudo chown -R $(whoami) /var/acebook
+# # Change ownership of the directory
+# sudo chown -R $(whoami) /var/acebook
 
 # Install application dependencies
 npm install
 
 # Install pm2 globally
-npm install -g pm2
+npm install pm2
