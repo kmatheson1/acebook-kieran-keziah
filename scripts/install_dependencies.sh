@@ -1,16 +1,8 @@
 #!/bin/bash
 
-# Install NVM
-curl https://raw.githubusercontent.com/creationix/nvm/master/install.sh | bash
-
-# Set up NVM environment variables
-export NVM_DIR="/home/ec2-user/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
-
-# Install Node.js (version 18) and check for npm
-nvm install 18
-nvm use 18
+# Install Node.js LTS version using NodeSource
+curl -sL https://rpm.nodesource.com/setup_lts.x | sudo bash -
+sudo yum install -y nodejs
 
 # Check if npm is installed
 if command -v npm &> /dev/null; then
