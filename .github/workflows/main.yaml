@@ -53,10 +53,6 @@ jobs:
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
-
-      - name: Print Directory Contents
-        run: |
-          ls -al
       
       - name: Download Artifact
         uses: actions/download-artifact@v3
@@ -79,7 +75,6 @@ jobs:
         run: |
           aws s3 cp application_package.zip s3://kieran-keziah-acebook
 
-      
       - name: Deploy to CodeDeploy
         run: |
           aws deploy create-deployment \
