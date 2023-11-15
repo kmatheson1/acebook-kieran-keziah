@@ -5,21 +5,21 @@ NVM_DIR="$HOME/.nvm"
 export NVM_DIR
 
 # Install nvm
-sudo curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
 
 # Load nvm
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
 
 # Use Node.js LTS version
-sudo nvm install 18
-sudo nvm use 18
+nvm install 18
+nvm use 18
 
 # Navigate to your app directory
 cd /var/acebook
 
 # Install application dependencies
-sudo npm install
+npm install
 
 # Install pm2 globally
-sudo npm install -g pm2
+npm install -g pm2
