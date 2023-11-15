@@ -4,12 +4,12 @@ files:
   - source: /
     destination: /var/acebook
 hooks:
-  BeforeInstall:
-    - location: scripts/install_dependencies.sh
-      timeout: 300
-      runas: root
   ApplicationStop:
     - location: scripts/application-stop.sh
+      timeout: 300
+      runas: root
+  BeforeInstall:
+    - location: scripts/install_dependencies.sh
       timeout: 300
       runas: root
   AfterInstall:
