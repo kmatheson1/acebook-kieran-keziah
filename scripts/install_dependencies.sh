@@ -1,16 +1,25 @@
 #!/bin/bash
 
-cd /var/acebook
+# Use full paths to ensure compatibility
+NVM_DIR="/home/ec2-user/.nvm"
+export NVM_DIR
 
-curl https://raw.githubusercontent.com/creationix/nvm/master/install.sh | bash
-export NVM_DIR="$HOME/.nvm"
+# Install nvm
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
+
+# Load nvm
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
-source ~/.bashrc
 
+# Use Node.js LTS version
 nvm install 18
 nvm use 18
 
+# Navigate to your app directory
+cd /var/acebook
+
+# Install application dependencies
 npm install
 
+# Install pm2 globally
 npm install -g pm2
