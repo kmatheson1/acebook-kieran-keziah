@@ -7,6 +7,10 @@ hooks:
   ApplicationStop:
     - location: scripts/application-stop.sh
       runas: root
+  BeforeInstall:
+    - location: scripts/install_dependencies.sh
+      timeout: 300
+      runas: root
   AfterInstall:
     - location: scripts/after-install.sh
       timeout: 300
