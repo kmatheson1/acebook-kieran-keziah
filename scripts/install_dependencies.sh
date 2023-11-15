@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Use full paths to ensure compatibility
-NVM_DIR="/home/ec2-user/.nvm"
+NVM_DIR="$HOME/.nvm"
 export NVM_DIR
 
 # Install nvm
