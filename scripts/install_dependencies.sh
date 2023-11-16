@@ -20,7 +20,7 @@ cd /var/acebook
 chown -R ec2-user:ec2-user /var/acebook
 
 # Install application dependencies
-npm install
+sudo npm install
 
 # Install pm2 globally
-npm install -g pm2
+sudo npm install -g pm2
