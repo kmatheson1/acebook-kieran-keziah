@@ -1,9 +1,6 @@
 #!/bin/bash
 
-export PATH=~/.npm-global/bin:$PATH
-
-# Navigate to your app directory
-cd /var/acebook
+source /home/ec2-user/.bash_profile
 
 # Check for sudo
 if [ "$EUID" -ne 0 ]; then
@@ -35,3 +32,6 @@ fi
 # Start and enable MongoDB
 sudo systemctl start mongod
 sudo systemctl enable mongod
+
+cd /var/acebook
+npm install

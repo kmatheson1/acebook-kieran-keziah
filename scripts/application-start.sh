@@ -1,9 +1,8 @@
 #!/bin/bash
 
-export PATH=~/.npm-global/bin:$PATH
-
-# Navigate to your app directory
-cd /var/acebook
+source /home/ec2-user/.bash_profile
 
 # Start your application with pm2
-pm2 start app.js --name kk-acebook
+
+cd /var/acebook
+pm2 start npm --name kk-acebook -- start
