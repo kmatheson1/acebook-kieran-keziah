@@ -22,11 +22,11 @@ if ! command -v mongod &> /dev/null; then
     # Check if the repository file exists
     if [ ! -e "$repo_file" ]; then
     # Create the repository file with the specified content
-    echo -e "$repo_content" | sudo tee "$repo_file" > /dev/null
+    echo -e "$repo_content" | tee "$repo_file" > /dev/null
     fi
 
     # Install MongoDB
-    udo yum install -y mongodb-org
+    yum install -y mongodb-org
 fi
 
 # Start and enable MongoDB
