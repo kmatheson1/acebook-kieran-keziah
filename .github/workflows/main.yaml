@@ -3,7 +3,7 @@ name: Test and Build
 on:
   push:
     branches:
-      - main
+      - manual_ec2
 
 jobs:
   build:
