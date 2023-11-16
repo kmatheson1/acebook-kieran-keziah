@@ -1,7 +1,8 @@
 #!/bin/bash
 
 # Install Node.js LTS version using NodeSource
-curl -sL https://rpm.nodesource.com/setup_lts.x | sudo bash -
+sudo yum remove nodejs
+curl -sL https://rpm.nodesource.com/setup_18.x | sudo bash -
 yum install -y nodejs
 
 # Check if npm is installed
