@@ -14,7 +14,7 @@ else
 fi
 
 # # Navigate to your app directory
-# cd /var/acebook
+cd /var/acebook
 
 # # # Change ownership of the directory
 # # chown -R ec2-user:ec2-user /var/acebook
