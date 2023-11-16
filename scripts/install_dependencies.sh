@@ -13,14 +13,14 @@ else
     exit 1
 fi
 
-# Navigate to your app directory
-cd /var/acebook
+# # Navigate to your app directory
+# cd /var/acebook
 
-# # Change ownership of the directory
-# chown -R ec2-user:ec2-user /var/acebook
+# # # Change ownership of the directory
+# # chown -R ec2-user:ec2-user /var/acebook
 
-# Install application dependencies
-npm install
+# # Install application dependencies
+# npm install
 
 # Install pm2 globally
 npm install -g pm2

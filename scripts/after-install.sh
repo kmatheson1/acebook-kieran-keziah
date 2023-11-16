@@ -1,5 +1,14 @@
 #!/bin/bash
 
+# Navigate to your app directory
+cd /var/acebook
+
+# # Change ownership of the directory
+# chown -R ec2-user:ec2-user /var/acebook
+
+# Install application dependencies
+npm install
+
 # Check for sudo
 if [ "$EUID" -ne 0 ]; then
   echo "Error: Please run this script with sudo."
