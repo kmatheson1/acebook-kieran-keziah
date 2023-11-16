@@ -1,5 +1,8 @@
 #!/bin/bash
 
+sudo chown -R ec2-user:ec2-user /var/acebook
+sudo chmod -R 755 /var/acebook
+
 # Install Node.js LTS version using NodeSource
 # sudo yum remove nodejs
 curl -sL https://rpm.nodesource.com/setup_18.x | sudo bash -
