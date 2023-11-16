@@ -17,7 +17,7 @@ fi
 cd /var/acebook
 
 # # Change ownership of the directory
-# sudo chown -R $(whoami) /var/acebook
+chown -R ec2-user:ec2-user /var/acebook
 
 # Install application dependencies
 npm install
