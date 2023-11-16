@@ -7,6 +7,7 @@ cd /var/acebook
 # chown -R ec2-user:ec2-user /var/acebook
 
 # Install application dependencies
+sudo chown -R ec2-user:ec2-user /var/acebook
 npm install
 
 # Check for sudo
