@@ -1,6 +1,7 @@
 #!/bin/bash
 
 sudo chown -R ec2-user:ec2-user /var/acebook
+sudo chown -R ec2-user:ec2-user /usr/lib/node_modules
 sudo chmod -R 755 /var/acebook
 
 # Install Node.js LTS version using NodeSource
