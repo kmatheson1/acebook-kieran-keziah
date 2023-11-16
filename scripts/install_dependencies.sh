@@ -26,4 +26,4 @@ cd /var/acebook
 npm install
 
 # Install pm2 globally
-npm install pm2
+npm install -g pm2
