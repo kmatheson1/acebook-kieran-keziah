@@ -1,5 +1,13 @@
 #!/bin/bash
 
+# Create the directory and set npm prefix
+mkdir ~/.npm-global
+npm config set prefix '~/.npm-global'
+
+# Add npm-global/bin to the PATH
+export PATH=~/.npm-global/bin:$PATH
+
+
 sudo chown -R ec2-user:ec2-user /var/acebook
 sudo chown -R ec2-user:ec2-user /usr/lib/node_modules
 sudo chmod -R 755 /var/acebook

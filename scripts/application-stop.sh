@@ -1,5 +1,7 @@
 #!/bin/bash
 
+export PATH=~/.npm-global/bin:$PATH
+
 APP_NAME="kk-acebook"
 
 cd /var/acebook
