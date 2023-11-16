@@ -30,5 +30,5 @@ if ! command -v mongod &> /dev/null; then
 fi
 
 # Start and enable MongoDB
-sudo systemctl start mongod
-sudo systemctl enable mongod
+systemctl start mongod
+systemctl enable mongod
