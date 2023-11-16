@@ -75,9 +75,9 @@ jobs:
         run: |
           aws s3 cp application_package.zip s3://kk-acebook-manual
 
-      # - name: Deploy to CodeDeploy
-      #   run: |
-      #     aws deploy create-deployment \
-      #       --application-name kk-acebook\
-      #       --deployment-group kkAcebookDeploymentServers \
-      #       --s3-location bucket=kk-acebook-manual,key=application_package.zip,bundleType=zip
+      - name: Deploy to CodeDeploy
+        run: |
+          aws deploy create-deployment \
+            --application-name kk-acebook-manual\
+            --deployment-group kk-acebook-manual \
+            --s3-location bucket=kk-acebook-manual,key=application_package.zip,bundleType=zip
