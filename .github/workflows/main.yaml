@@ -78,6 +78,6 @@ jobs:
       - name: Deploy to CodeDeploy
         run: |
           aws deploy create-deployment \
-            --application-name kk-acebook-manual\
+            --application-name kk-acebook-manual \
             --deployment-group kk-acebook-manual \
-            --s3-location bucket=kk-acebook-manual,key=application_package.zip,bundleType=zip
+            --s3-location bucket=kk-acebook-manual,key=application_package.zip,bundleType=zip \
