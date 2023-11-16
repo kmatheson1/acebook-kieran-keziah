@@ -17,10 +17,11 @@ fi
 cd /var/acebook
 
 # # Change ownership of the directory
-chown -R ec2-user:ec2-user /var/acebook
+# chown -R ec2-user:ec2-user /var/acebook
 
 # Install application dependencies
 sudo npm install
 
 # Install pm2 globally
 sudo npm install -g pm2
+sudo npm install -g nodemon
