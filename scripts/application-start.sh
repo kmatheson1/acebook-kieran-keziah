@@ -4,4 +4,4 @@
 cd /var/acebook
 
 # Start your application with pm2
-pm2 start app.js --name kk-acebook
+pm2 start npm --name kk-acebook -- start
