@@ -1,0 +1,83 @@
+name: Test and Build
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+
+      - name: Install Dependencies
+        run: npm install  
+
+      # - name: Start MongoDB
+      #   uses: supercharge/mongodb-github-action@1.10.0
+      #   with:
+      #     mongodb-version: 5.0
+
+      # - name: Run Tests
+      #   uses: cypress-io/github-action@v6
+      #   with:
+      #       start: npm run start:test
+
+      - name: Package Application
+        run: |
+          mkdir deployment
+          # Copy everything except files and directories listed in .gitignore
+          rsync -av --exclude-from=.gitignore --exclude=.git --exclude=deployment . deployment/  
+          cd deployment
+          npm install
+          zip -r application_package.zip .
+
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: deployment-artifact
+          path: deployment/application_package.zip
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+      
+      - name: Download Artifact
+        uses: actions/download-artifact@v3
+        with:
+          name: deployment-artifact
+
+      - name: Install AWS CLI
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y awscli
+
+      - name: Configure AWS Credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: eu-west-2
+
+      - name: Deploy to S3
+        run: |
+          aws s3 cp application_package.zip s3://kieran-keziah-acebook
+
+      - name: Deploy to CodeDeploy
+        run: |
+          aws deploy create-deployment \
+            --application-name kk-acebook\
+            --deployment-group kkAcebookDeploymentServers \
+            --s3-location bucket=kieran-keziah-acebook,key=application_package.zip,bundleType=zip
