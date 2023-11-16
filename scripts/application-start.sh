@@ -1,6 +1,6 @@
 #!/bin/bash
 
-source /home/ec2-user/.bash_profile
+# source /home/ec2-user/.bash_profile
 
 # Start your application with pm2
 

@@ -37,7 +37,6 @@ jobs:
           # Copy everything except files and directories listed in .gitignore
           rsync -av --exclude-from=.gitignore --exclude=.git --exclude=deployment . deployment/  
           cd deployment
-          npm install
           zip -r application_package.zip .
 
       - name: Upload Artifact
