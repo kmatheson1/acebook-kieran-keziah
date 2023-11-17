@@ -1,6 +1,6 @@
 #!/bin/bash
 
-cd /var/acebook
+# source /home/ec2-user/.bash_profile
 
 # Check if the application is running
 if pm2 describe $APP_NAME &> /dev/null; then
