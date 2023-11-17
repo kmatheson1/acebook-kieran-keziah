@@ -1,5 +1,5 @@
 #!/bin/bash
-
+source /home/ec2-user/.bash_profile
 # Navigate to your app directory
 cd /var/acebook
 
