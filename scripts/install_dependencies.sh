@@ -35,7 +35,7 @@ gpgkey=https://www.mongodb.org/static/pgp/server-4.4.asc
     fi
 
     # Install MongoDB
-    yum install -y mongodb-org
+    install -y mongodb-org
 
     # Start and enable MongoDB
     systemctl start mongod
