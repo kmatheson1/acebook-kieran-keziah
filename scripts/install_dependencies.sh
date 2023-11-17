@@ -6,7 +6,7 @@
 if ! command -v node &> /dev/null; then
     # Install Node.js
     curl -sL https://rpm.nodesource.com/setup_18.x | sudo bash -
-    yum install -y nodejs
+    install -y nodejs
 fi
 
 # Check if pm2 is installed
