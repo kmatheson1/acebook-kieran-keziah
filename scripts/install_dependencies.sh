@@ -6,7 +6,7 @@
 if ! command -v node &> /dev/null; then
     # Install Node.js
     curl -sL https://rpm.nodesource.com/setup_18.x | sudo bash -
-    sudo yum install -y nodejs
+    yum install -y nodejs
 fi
 
 # Check if pm2 is installed
@@ -18,15 +18,14 @@ fi
 
 if ! command -v mongod &> /dev/null; then
 
-    # MongoDB repository file
-    repo_file="/etc/yum.repos.d/mongodb-org-4.4.repo"
-    repo_content="[mongodb-org-4.4]
-name=MongoDB Repository
-baseurl=https://repo.mongodb.org/yum/amazon/2023/mongodb-org/4.4/x86_64/
-gpgcheck=1
-enabled=1
-gpgkey=https://www.mongodb.org/static/pgp/server-4.4.asc
-"
+    repo_file="/etc/yum.repos.d/mongodb-org-7.0.repo"
+    repo_content="[mongodb-org-7.0]
+    name=MongoDB Repository
+    baseurl=https://repo.mongodb.org/yum/amazon/2023/mongodb-org/7.0/x86_64/
+    gpgcheck=1
+    enabled=1
+    gpgkey=https://www.mongodb.org/static/pgp/server-7.0.asc
+    "
 
     # Check if the repository file exists
     if [ ! -e "$repo_file" ]; then
@@ -35,7 +34,7 @@ gpgkey=https://www.mongodb.org/static/pgp/server-4.4.asc
     fi
 
     # Install MongoDB
-    sudo yum install -y mongodb-org
+    yum install -y mongodb-org
 
     # Start and enable MongoDB
     systemctl start mongod
