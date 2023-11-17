@@ -2,6 +2,8 @@
 
 # source /home/ec2-user/.bash_profile
 
+APP_NAME="kk-acebook"
+
 # Check if the application is running
 if pm2 describe $APP_NAME &> /dev/null; then
     # If running, stop and delete the application
