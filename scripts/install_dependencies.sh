@@ -32,4 +32,3 @@ fi
 # Start and enable MongoDB
 systemctl start mongod
 systemctl enable mongod
-
