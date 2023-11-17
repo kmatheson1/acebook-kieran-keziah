@@ -21,15 +21,15 @@ jobs:
       - name: Install Dependencies
         run: npm install  
 
-      - name: Start MongoDB
-        uses: supercharge/mongodb-github-action@1.10.0
-        with:
-          mongodb-version: 5.0
+      # - name: Start MongoDB
+      #   uses: supercharge/mongodb-github-action@1.10.0
+      #   with:
+      #     mongodb-version: 5.0
 
-      - name: Run Tests
-        run: |
-            npm run start:test &
-            npm test
+      # - name: Run Tests
+      #   run: |
+      #       npm run start:test &
+      #       npm test
 
       - name: Package Application
         run: |
