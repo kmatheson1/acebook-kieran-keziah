@@ -28,7 +28,7 @@ jobs:
 
       - name: Run Tests
         run: |
-            npm run star:test &
+            npm run start:test &
             npm test
 
       - name: Package Application
