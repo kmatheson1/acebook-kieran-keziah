@@ -33,4 +33,6 @@ sudo systemctl enable mongod
 
 cd /var/acebook
 
-# npm install
+sudo chown -R ec2-user:ec2-user /var/acebook
+npm install
+npm start
