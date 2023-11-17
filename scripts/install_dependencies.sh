@@ -6,7 +6,7 @@
 if ! command -v node &> /dev/null; then
     # Install Node.js
     curl -sL https://rpm.nodesource.com/setup_18.x | sudo bash -
-    sudo install -y nodejs
+    sudo yum install -y nodejs
 fi
 
 # Check if pm2 is installed
@@ -35,7 +35,7 @@ gpgkey=https://www.mongodb.org/static/pgp/server-4.4.asc
     fi
 
     # Install MongoDB
-    sudo install -y mongodb-org
+    sudo yum install -y mongodb-org
 
     # Start and enable MongoDB
     systemctl start mongod
