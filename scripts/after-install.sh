@@ -30,3 +30,7 @@ fi
 # Start and enable MongoDB
 sudo systemctl start mongod
 sudo systemctl enable mongod
+
+cd /var/acebook
+
+npm install
