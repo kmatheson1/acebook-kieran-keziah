@@ -1,5 +1,5 @@
 #!/bin/bash
-
+source /home/ec2-user/.bash_profile
 # Check for sudo
 if [ "$EUID" -ne 0 ]; then
   echo "Error: Please run this script with sudo."
