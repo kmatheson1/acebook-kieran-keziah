@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# source /home/ec2-user/.bash_profile
+source /home/ec2-user/.bash_profile
 
 APP_NAME="kk-acebook"
 
