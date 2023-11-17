@@ -33,4 +33,4 @@ sudo systemctl enable mongod
 
 cd /var/acebook
 
-npm install
+# npm install
